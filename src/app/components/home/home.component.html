@@ -4,19 +4,17 @@
   </div>
 </div>
 
+<h4 class="text-danger">Produtos</h4>
 
-<div class="row">
-  <div class="col">
-    <figure class="figure">
-      <img src="assets/angular.png" class="figure-img img-fluid rounded" alt="...">
-      <figcaption class="figure-caption">Angular</figcaption>
-    </figure>
-  </div>
-
-  <div class="col">
-    <figure class="figure">
-      <img src="assets/crud.png" class="figure-img img-fluid rounded" alt="...">
-      <figcaption class="figure-caption">Crud</figcaption>
-    </figure>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="fotoProduto1" alt="">
+  <div class="card-body">
+    <h5 class="card-title">{{nomeProduto}}</h5>
+    <p class="card-text">Identificação: {{idProduto}}</p>
+    <span *ngIf="promocao; else elseBlock" class="badge badge-success">Promoção</span>
+    <ng-template #elseBlock>
+      <span class="badge badge-primary">Aproveite</span>
+    </ng-template>
+    <a href="#" class="btn btn-primary float-right">Comprar</a>
   </div>
 </div>
