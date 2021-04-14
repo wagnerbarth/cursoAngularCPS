@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
       nome: 'Curso de Angular',
       preco: 49.99,
       validade: '2021-12-04',
-      promocao: false,
+      promocao: true,
       foto: 'assets/images/produtos/angular.png'
     },
     {
