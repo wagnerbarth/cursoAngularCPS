@@ -1,3 +1,5 @@
+import { IProduto } from './../../model/iProduto.model';
+import { ProdutosService } from './../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   // Array de produtos
-  cardProdutos: any[] = [
+  /*cardProdutos: any[] = [
     {
       id: 1,
       nome: 'Curso de Angular',
@@ -58,9 +60,26 @@ export class HomeComponent implements OnInit {
       foto: 'assets/images/produtos/java.jpg'
     },
   ];
+  */
 
-  constructor() { }
+  cardProdutos: IProduto[] = [];
 
-  ngOnInit(): void { }
+  constructor(
+    private produtosService: ProdutosService
+  ) { }
+
+  // tslint:disable-next-line: typedef
+  ngOnInit() {
+    this.carregarProdutos();
+  }
+
+  carregarProdutos(): void {
+    this.produtosService.buscarTodos()
+      // tslint:disable-next-line: deprecation
+      .subscribe((retorno) => {
+        // console.log('lista:', retorno);
+        this.cardProdutos = retorno;
+      });
+  }
 
 }
