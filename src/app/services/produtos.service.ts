@@ -19,8 +19,15 @@ export class ProdutosService {
 
   buscarTodos(): Observable<IProduto[]> {
     return this.http.get<IProduto[]>(this.URL).pipe(
-      map((retorno) => { return retorno }), // caso não receba o retorno exibe o erro
-      catchError((erro) => { return this.exibirErro(erro); })
+      map((retorno) => retorno), // caso não receba o retorno exibe o erro
+      catchError((erro) => this.exibirErro(erro))
+    );
+  }
+
+  cadastrar(produto: IProduto): Observable<IProduto> {
+    return this.http.post<IProduto>(this.URL, produto).pipe(
+      map((retorno) => retorno), // caso não receba o retorno exibe o erro
+      catchError((erro) => this.exibirErro(erro))
     );
   }
 
