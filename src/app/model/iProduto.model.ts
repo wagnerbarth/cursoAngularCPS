@@ -3,6 +3,6 @@ export interface IProduto{
   nome: string;
   validade: Date;
   preco: number;
-  promocao: boolean;
+  promocao: string;
   foto: string;
 }

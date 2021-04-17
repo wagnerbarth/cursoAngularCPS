@@ -19,11 +19,13 @@
     "@angular/platform-browser": "~11.2.7",
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
+    "@sweetalert2/ngx-sweetalert2": "^9.0.0",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.1",
     "jquery": "^3.6.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^10.16.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

@@ -1,3 +1,4 @@
+//import { IProduto } from 'src/app/model/iProduto.model';
 import { IProduto } from './../../../model/iProduto.model';
 import { ProdutosService } from './../../../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
@@ -86,6 +87,18 @@ export class ProdutosListComponent implements OnInit {
         // console.log('lista:', retorno);
         this.listaProdutos = retorno;
       });
+  }
+
+  deletar(produto: IProduto): void{
+    this.produtosService.excluir(produto.id)
+    .subscribe(()=>{
+      this.produtosService.exibirMensagem(
+        'SISTEMA',
+        `${produto.nome} foi excluido com sucesso!`,
+        'toast-error'
+      );
+      this.carregarProdutos();
+    });
   }
 
 }

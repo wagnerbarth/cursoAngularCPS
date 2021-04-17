@@ -14,12 +14,14 @@ export class ProdutosCreateComponent implements OnInit {
   preco: number;
   validade: string;*/
 
+  selected = true;
+
   produto: IProduto = {
     nome: null,
     validade: null,
     preco: null,
-    promocao: null,
-    foto: null
+    promocao: 'false',
+    foto: 'assets/images/produtos/angular.png'
   };
 
   constructor(

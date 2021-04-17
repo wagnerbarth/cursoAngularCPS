@@ -10,6 +10,8 @@
       <th scope="col">Produto</th>
       <th scope="col">Preço</th>
       <th scope="col">Validade</th>
+      <th scope="col">Promoção</th>
+      <th scope="col">Foto</th>
       <th scope="col">Ações</th>
     </tr>
   </thead>
@@ -19,8 +21,10 @@
       <td>{{prod.nome | uppercase}}</td>
       <td>{{prod.preco | currency: 'BRL'}}</td>
       <td>{{prod.validade | date: 'shortDate'}}</td>
+      <td>{{prod.promocao}}</td>
+      <td>{{prod.foto}}</td>
       <td>
-        <button class="btn btn-warning">
+        <button class="btn btn-warning" routerLink="/produto/atualizar/{{prod.id}}">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
             viewBox="0 0 16 16">
             <path
@@ -28,7 +32,14 @@
           </svg>
         </button>
 
-        <button class="btn btn-danger ml-3">
+        <button class="btn btn-danger ml-3" [swal]="{
+          title: 'ATENÇÂO !!!',
+          text: 'Deseja realmente excluir o produto ' + prod.nome + '?',
+          showDenyButton: true,
+          denyButtonText: 'Não',
+          confirmButtonText: 'Sim',
+          icon: 'warning'
+        }" (confirm)="deletar(prod)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
             viewBox="0 0 16 16">
             <path

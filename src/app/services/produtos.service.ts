@@ -31,6 +31,27 @@ export class ProdutosService {
     );
   }
 
+  excluir(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.URL}/${id}`).pipe(
+      map((retorno) => retorno), // caso não receba o retorno exibe o erro
+      catchError((erro) => this.exibirErro(erro))
+    );
+  }
+
+  buscarPorId(id: number): Observable<IProduto>{
+    return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
+      map((retorno) => retorno), // caso não receba o retorno exibe o erro
+      catchError((erro) => this.exibirErro(erro))
+    );
+  }
+
+  atualizar(produto: IProduto): Observable<IProduto> {
+    return this.http.put<IProduto>(`${this.URL}/${produto.id}`, produto).pipe(
+      map((retorno) => retorno), // caso não receba o retorno exibe o erro
+      catchError((erro) => this.exibirErro(erro))
+    );
+  }
+
   exibirErro(e: any): Observable<any> {
     this.exibirMensagem('ERRO!!!', 'Não foi possível realizar a operação!', 'toast-error');
     return EMPTY;

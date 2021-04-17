@@ -10,7 +10,7 @@ export class CardProdutoComponent implements OnInit {
   @Input() foto: string;
   @Input() nomeProduto: string;
   @Input() idProduto: number;
-  @Input() promocao: boolean;
+  @Input() promocao: string;
   @Input() precoProduto: number;
   @Input() dataValidade: number;
 

@@ -1,1 +1,64 @@
-<p>produto-update works!</p>
+<h1 class="my-3 text-primary"> Atualizar Produtos </h1>
+
+<div class="card shadow">
+  <form class="m-3">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="nome">Nome do Produto</label>
+          <input type="text" class="form-control" placeholder="Digite o nome do Produto" name="nomeProduto"
+            [(ngModel)]="produto.nome">
+        </div>
+      </div>
+    </div> <!-- Fim row nome -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="validade">Validade do Produto</label>
+          <input type="date" class="form-control" name="validade" [(ngModel)]="produto.validade">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="preco">Preço do Produto</label>
+          <input type="number" class="form-control" placeholder="0.00" name="preco" [(ngModel)]="produto.preco">
+        </div>
+      </div>
+    </div> <!-- Fim row validade preço -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="pr-2" for="promocao">Promoção</label>
+          <select name="promocao" [(ngModel)]='produto.promocao'>
+            <option name="promocao" class="form-control" [value]="true" >Sim</option>
+            <option name="promocao" class="form-control" [value]="false" >Não</option>
+          </select>
+        </div>
+      </div>
+
+     <!--<div class="col-md-6">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="foto">Imagem do Produto</label>
+            <input type="file" class="form-control-file" id="foto" name="foto" [value]="foto" [(ngModel)]='produto.foto'>
+          </div>
+        </div>
+      </div>-->
+    </div> <!-- Fim row promocao e imagem -->
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-default" routerLink="/produtos">Voltar</button>
+      </div>
+
+      <div class="col">
+        <button class="btn btn-warning float-right" (click)="atualizarProduto()">Salvar</button>
+      </div>
+    </div>
+
+  </form>
+</div>
