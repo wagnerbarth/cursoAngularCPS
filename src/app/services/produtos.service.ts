@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { ToastrService } from 'ngx-toastr';
 import { IProduto } from './../model/iProduto.model';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +11,8 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ProdutosService {
 
-  private URL: string = 'http://localhost:3000/produtos';
+  // private URL: string = 'http://localhost:3000/produtos';
+  private URL: string = environment.URL;
 
   constructor(
     private http: HttpClient,
@@ -38,7 +40,7 @@ export class ProdutosService {
     );
   }
 
-  buscarPorId(id: number): Observable<IProduto>{
+  buscarPorId(id: number): Observable<IProduto> {
     return this.http.get<IProduto>(`${this.URL}/${id}`).pipe(
       map((retorno) => retorno), // caso não receba o retorno exibe o erro
       catchError((erro) => this.exibirErro(erro))
