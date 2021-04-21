@@ -17,6 +17,7 @@ export class ProdutosCreateComponent implements OnInit {
 
   selected = true;
   fileData: any = '';
+  listaFotos: any;
 
   produto: IProduto = {
     nome: null,
@@ -30,9 +31,10 @@ export class ProdutosCreateComponent implements OnInit {
     private produtosService: ProdutosService,
     private router: Router,
     private http: HttpClient
-  ) { }
+  ) { this.produto.promocao = '0'; }
 
   ngOnInit(): void {
+    this.carregarFotos();
   }
 
   salvarProduto(): void {
@@ -46,6 +48,15 @@ export class ProdutosCreateComponent implements OnInit {
           'toast-success'
         );
         this.router.navigate(['/produtos']);
+      });
+  }
+
+  carregarFotos(): void {
+    this.produtosService.buscarFotos()
+      // tslint:disable-next-line: deprecation
+      .subscribe((retorno) => {
+        // console.log('lista:', retorno);
+        this.listaFotos = retorno;
       });
   }
 

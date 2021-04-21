@@ -95,7 +95,7 @@ export class ProdutosListComponent implements OnInit {
       this.produtosService.exibirMensagem(
         'SISTEMA',
         `${produto.nome} foi excluido com sucesso!`,
-        'toast-error'
+        'toast-success'
       );
       this.carregarProdutos();
     });

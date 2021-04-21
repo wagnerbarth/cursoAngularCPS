@@ -35,20 +35,33 @@
         <div class="form-group">
           <label class="pr-2" for="promocao">Promoção</label>
           <select name="promocao" [(ngModel)]='produto.promocao'>
-            <option name="promocao" class="form-control" [value]="true">Sim</option>
-            <option name="promocao" class="form-control" [value]="false">Não</option>
+            <option name="promocao" class="form-control" [value]="1">Sim</option>
+            <option name="promocao" class="form-control" [value]="0">Não</option>
           </select>
         </div>
       </div>
-
-      <div class="col-md-6  pb-2">
+    </div>
+    <div class="row">
+      <div class="col-md-6  pb-1">
         <div class="form-group">
           <label for="foto">Carregar Imagem</label>
           <input type="file" class="pl-2" (change)="fileChange($event)">
-          <button class="btn btn-primary float-right" (click)="uploadFile()">Upload Imagem</button>
         </div>
       </div>
-
+      <div class="col-md-6">
+        <button class="btn btn-secondary" (click)="uploadFile()">Upload Imagem</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="pr-2" for="foto">Escolher Foto</label>
+          <select name="foto" [(ngModel)]='produto.foto'>
+            <option *ngFor="let item of listaFotos" name="foto" class="form-control" value="{{item.foto}}">{{item.foto}}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <!--<div class="col-md-6">

@@ -3,7 +3,7 @@
   <div class="card-body">
     <h5 class="card-title">{{nomeProduto | uppercase}}</h5>
     <p class="card-text">Identificação: {{idProduto | number: '2.0-0'}}</p>
-    <span *ngIf="promocao == 'true'; else elseBlock" class="badge badge-success">Promoção</span>
+    <span *ngIf="promocao == '1'; else elseBlock" class="badge badge-success">Promoção</span>
     <ng-template #elseBlock>
       <span class="badge badge-primary">Aproveite</span>
     </ng-template>
