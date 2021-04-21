@@ -56,7 +56,7 @@
         <div class="form-group">
           <label class="pr-2" for="foto">Escolher Foto</label>
           <select name="foto" [(ngModel)]='produto.foto'>
-            <option *ngFor="let item of listaFotos" name="foto" class="form-control" value="{{item.foto}}">{{item.foto}}
+            <option *ngFor="let item of listaFotos" name="foto" class="form-control" [value]="item.foto">{{item.foto}}
             </option>
           </select>
         </div>

@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { ProdutosService } from './../../../services/produtos.service';
 import { IProduto } from './../../../model/iProduto.model';
 import { Component, OnInit } from '@angular/core';
@@ -23,8 +24,8 @@ export class ProdutosCreateComponent implements OnInit {
     nome: null,
     validade: null,
     preco: null,
-    promocao: 'false',
-    foto: 'assets/images/produtos/angular.png'
+    promocao: null,
+    foto: null
   };
 
   constructor(
@@ -68,7 +69,7 @@ export class ProdutosCreateComponent implements OnInit {
 
       const file = fileList[0];
       // pega informações do arquivo
-      console.log('finfo', file.name, file.size, file.type);
+      // console.log('finfo', file.name, file.size, file.type);
       // testa se o tamanho do arquivo não supera 4K
       if ((file.size / 1048576) <= 4) {
         const formData = new FormData();
@@ -88,7 +89,7 @@ export class ProdutosCreateComponent implements OnInit {
 
   uploadFile(): void {
 
-    const URL = 'http://localhost/upload-imagens/';
+    const URL = environment.uploadURL;
 
     this.http.post(URL + 'upload_file_angular.php', this.fileData)
       .subscribe(res => {
@@ -98,6 +99,7 @@ export class ProdutosCreateComponent implements OnInit {
           'toast-success'
         );
       }, (err) => {
+        console.log('erro imagem: ', err)
         this.produtosService.exibirMensagem(
           'SISTEMA',
           `Imagem não foi adicionada!`,

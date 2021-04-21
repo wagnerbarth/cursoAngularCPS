@@ -76,7 +76,7 @@ export class ProdutoUpdateComponent implements OnInit {
 
       const file = fileList[0];
       // pega informações do arquivo
-      console.log('finfo', file.name, file.size, file.type);
+      // console.log('finfo', file.name, file.size, file.type);
       // testa se o tamanho do arquivo não supera 4K
       if ((file.size / 1048576) <= 4) {
         const formData = new FormData();

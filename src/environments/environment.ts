@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  URL: 'http://localhost:3000/produtos'
+  // URL: 'http://localhost:3000/produtos',
+  // uploadURL: 'http://localhost/upload-imagens/'
+  URL: 'https://barth.com.br/apiAngularCps/model',
+  uploadURL: 'https://barth.com.br/upload-imagens/'
 };
 
 /*
