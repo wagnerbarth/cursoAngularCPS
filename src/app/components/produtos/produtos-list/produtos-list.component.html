@@ -12,7 +12,7 @@
       <th scope="col">Validade</th>
       <th scope="col">Promoção</th>
       <th scope="col">Foto</th>
-      <th scope="col">Ações</th>
+      <th scope="col" style="width: 15%">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +32,7 @@
           </svg>
         </button>
 
-        <button class="btn btn-danger ml-3" [swal]="{
+        <button class="btn btn-danger ml-2" [swal]="{
           title: 'ATENÇÂO !!!',
           text: 'Deseja realmente excluir o produto ' + prod.nome + '?',
           showDenyButton: true,

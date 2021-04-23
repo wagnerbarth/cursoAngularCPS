@@ -40,23 +40,13 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6  pb-1">
-        <div class="form-group">
-          <label for="foto">Carregar Imagem</label>
-          <input type="file" class="pl-2" (change)="fileChange($event)">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <button class="btn btn-secondary" (click)="uploadFile()">Upload Imagem</button>
-      </div>
-    </div>
+
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
           <label class="pr-2" for="foto">Escolher Foto</label>
           <select name="foto" [(ngModel)]='produto.foto'>
-            <option *ngFor="let item of listaFotos" name="foto" class="form-control" [value]="item.foto">{{item.foto}}
+            <option *ngFor="let item of listaFotos" name="foto" class="form-control" [value]="item.caminho">{{item.foto}}
             </option>
           </select>
         </div>

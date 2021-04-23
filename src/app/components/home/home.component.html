@@ -8,14 +8,8 @@
 
 <div class="row">
   <div class="col-sm-4 mb-5" *ngFor="let item of cardProdutos">
-    {{item.foto}}
-    <app-card-produto
-      [foto]='item.foto'
-      [nomeProduto]='item.nome'
-      [promocao]='item.promocao'
-      [idProduto]='item.id'
-      [dataValidade]='item.validade'
-      [precoProduto]='item.preco'
-    ></app-card-produto>
+    <app-card-produto [foto]='item.foto' [nomeProduto]='item.nome' [promocao]='item.promocao' [idProduto]='item.id'
+      [dataValidade]='item.validade' [precoProduto]='item.preco'>
+    </app-card-produto>
   </div>
 </div>

@@ -1,0 +1,19 @@
+<h1 class="my-3 text-primary"> Salvar Foto de Produto </h1>
+
+<div class="card shadow">
+  <form class="m-3">
+
+<div class="row">
+  <div class="col-md-6  pb-1">
+    <div class="form-group">
+      <label for="foto">Carregar Imagem</label>
+      <input type="file" class="pl-2" (change)="fileChange($event)">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-secondary" (click)="uploadFile()">Upload Imagem</button>
+  </div>
+</div>
+
+</form>
+</div>

@@ -24,8 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { ReactiveFormsModule } from "@angular/forms";
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { UploadImageComponent } from './components/produtos/upload-image/upload-image.component';
 
 
 registerLocaleData(localePt);
@@ -38,7 +38,8 @@ registerLocaleData(localePt);
     HomeComponent,
     ProdutoUpdateComponent,
     ProdutosCreateComponent,
-    ProdutosListComponent
+    ProdutosListComponent,
+    UploadImageComponent
   ],
   imports: [
     BrowserModule,
